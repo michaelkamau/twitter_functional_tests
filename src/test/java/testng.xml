@@ -1,0 +1,8 @@
+<suite name="Twitter" verbose="1" >
+
+    <test name="LandingPageTests">
+        <classes>
+            <class name="LandingPageTest"/>
+        </classes>
+    </test>
+</suite>

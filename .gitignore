@@ -1,3 +1,4 @@
 .idea/
-/exploreselenium.iml
-/target/
+target
+twitter_functional_tests.iml
+
