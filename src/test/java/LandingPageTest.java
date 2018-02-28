@@ -1,6 +1,6 @@
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LandingPage;
 
@@ -9,9 +9,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class LandingPageTest extends BaseTest {
+    private LandingPage landingPage;
+
+    @BeforeClass
+    @Override
+    public void setUp() throws Exception {
+        super.setUp();
+        landingPage = new LandingPage(driver);
+    }
+
     @Test
     public void viewPromoLabelsTest() {
-        List<WebElement> promoLabels = LandingPage.getPromoLabels(driver);
+        List<WebElement> promoLabels = landingPage.getPromoLabels();
         List<String> promoLabelsStrings = promoLabels
                 .stream()
                 .map(WebElement::getText)
