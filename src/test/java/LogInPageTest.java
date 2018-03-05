@@ -1,6 +1,7 @@
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pages.GlobalNavBarPage;
 import pages.LogInPage;
 
 public class LogInPageTest extends BaseTest {
@@ -8,9 +9,11 @@ public class LogInPageTest extends BaseTest {
     private LogInPage logInPage;
 
     private final String expectedUsernameLoginErrorMessage =
-            "The username and password you entered did not match our records. Please double-check and try again.";
+            "The username and password you entered did not match our records. " +
+                    "Please double-check and try again.";
     private final String expectedEmailLoginErrorMessage =
-            "The email and password you entered did not match our records. Please double-check and try again.";
+            "The email and password you entered did not match our records. " +
+                    "Please double-check and try again.";
 
     @BeforeClass
     @Override
@@ -66,6 +69,22 @@ public class LogInPageTest extends BaseTest {
     @Test
     public void validHandleInvalidPasswordFailsLogin(){
         attemptUsernameLoginTest(validHandle, invalidPassword);
+    }
+
+    private void validLoginTest(final String identifier) {
+        GlobalNavBarPage globalNavBarPage;
+        globalNavBarPage = logInPage.login(identifier, validPassword);
+        Assert.assertEquals(globalNavBarPage.getHomeLinkText(), "Home");
+    }
+
+    @Test
+    public void validHandleValidPasswordLogsIn() {
+        validLoginTest(validHandle);
+    }
+
+    @Test
+    public void validEmailValidPasswordLogsIn() {
+        validLoginTest(validEmail);
     }
 
 }
