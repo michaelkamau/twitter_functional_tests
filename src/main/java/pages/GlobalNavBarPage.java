@@ -12,18 +12,27 @@ public class GlobalNavBarPage extends BasePage {
     private final WebDriver driver;
 
     @FindBy(how = How.CSS, using = "#global-nav-home > a > span.text")
+    private WebElement homeLinkText;
+
+    @FindBy(how = How.CSS, using = "#global-nav-home > a")
     private WebElement homeLink;
 
-    @FindBy(how = How.ID, using = "user-dropdown-toggle")
+    @FindBy(how = How.CSS, using = "#global-actions > li.people.notifications > a > span.text")
+    private WebElement notificationsLinkText;
+
+    @FindBy(how = How.CSS, using = "#global-actions > li.people.notifications > a")
     private WebElement notificationsLink;
 
     @FindBy(how = How.CSS, using = "#global-actions > li.dm-nav > a > span.text")
+    private WebElement messagesLinkText;
+
+    @FindBy(how = How.CSS, using = "#global-actions > li.dm-nav > a")
     private WebElement messagesLink;
 
     @FindBy(how = How.CSS, using = "#global-new-tweet-button")
     private WebElement tweetBtn;
 
-    @FindBy(how = How.CSS, using = "#user-dropdown-toggle")
+    @FindBy(how = How.ID, using = "user-dropdown-toggle")
     private WebElement profileSettingsLink;
 
     @FindBy(how = How.CSS, using = "#doc > div.topbar.js-topbar > div.global-nav > div > div > h1")
@@ -54,15 +63,35 @@ public class GlobalNavBarPage extends BasePage {
         this.driver = driver;
     }
 
-    public String getHomeLinkText() {
-        return homeLink.getText();
+    public final String getHomeLink() {
+        return homeLink.getAttribute("href");
     }
 
-    public String getNotificationsText() {
-        return notificationsLink.getText();
+    public final String getHomeText() {
+        return homeLinkText.getText();
     }
 
-    public void logOut() {
+    public final String getNotificationsText() {
+        return notificationsLinkText.getText();
+    }
+
+    public final String getNotificationsLink() {
+        return notificationsLink.getAttribute("href");
+    }
+
+    public final String getMessagesText() {
+        return messagesLinkText.getText();
+    }
+
+    public final String getMessagesLink() {
+        return messagesLink.getAttribute("href");
+    }
+
+    public final String getTweetBtnText() {
+        return tweetBtn.getText();
+    }
+
+    public final void logOut() {
         notificationsLink.click();
         logOutButton.click();
     }
