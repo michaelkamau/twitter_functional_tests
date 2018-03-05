@@ -8,10 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 public class LogInPage extends BasePage {
     private final WebDriver driver;
     private GlobalNavBarPage globalNavBarPage;
+    private final String LOGIN_URL = getBaseUrl() + "/login";
 
     public LogInPage(WebDriver driver) {
         this.driver = driver;
-        this.driver.get(getBaseUrl() + "/login");
+        this.driver.get(LOGIN_URL);
     }
 
     private WebElement getUserNameField() {
@@ -30,6 +31,9 @@ public class LogInPage extends BasePage {
     }
 
     public GlobalNavBarPage login(final String identifier, final String password) {
+        if (!driver.getCurrentUrl().equals(LOGIN_URL)) {
+            driver.get(LOGIN_URL);
+        }
         fillIdentifier(identifier);
         fillPassword(password);
         clickLogInButton();
