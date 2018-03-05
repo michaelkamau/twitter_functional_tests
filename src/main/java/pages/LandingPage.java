@@ -48,4 +48,5 @@ public class LandingPage extends BasePage{
         List<WebElement> promos = this.driver.findElements(promoIdent);
         return promos;
     }
+
 }
