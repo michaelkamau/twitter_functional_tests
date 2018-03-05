@@ -3,9 +3,11 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 public class LogInPage extends BasePage {
     private final WebDriver driver;
+    private GlobalNavBarPage globalNavBarPage;
 
     public LogInPage(WebDriver driver) {
         this.driver = driver;
@@ -27,10 +29,12 @@ public class LogInPage extends BasePage {
         return driver.findElement(logInBtnIdent);
     }
 
-    public void login(final String identifier, final String password) {
+    public GlobalNavBarPage login(final String identifier, final String password) {
         fillIdentifier(identifier);
         fillPassword(password);
         clickLogInButton();
+        globalNavBarPage = PageFactory.initElements(driver, GlobalNavBarPage.class);
+        return globalNavBarPage;
     }
 
     public String getLoginErrorMessage() {
