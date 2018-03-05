@@ -74,7 +74,7 @@ public class LogInPageTest extends BaseTest {
     private void validLoginTest(final String identifier) {
         GlobalNavBarPage globalNavBarPage;
         globalNavBarPage = logInPage.login(identifier, validPassword);
-        Assert.assertEquals(globalNavBarPage.getHomeLinkText(), "Home");
+        Assert.assertEquals(globalNavBarPage.getHomeText(), "Home");
         globalNavBarPage.logOut();
     }
 
