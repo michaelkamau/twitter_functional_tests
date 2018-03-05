@@ -36,37 +36,37 @@ public class LogInPageTest extends BaseTest {
         logInPage.dismissLoginErrorPopup();
     }
 
-    @Test
+    @Test(groups = {"invalidLogin"})
     public void invalidEmailValidPasswordFailsLogIn(){
         attemptUsernameLoginTest(invalidEmail, validPassword);
     }
 
-    @Test
+    @Test(groups = {"invalidLogin"})
     public void invalidEmailInvalidPasswordFailsLogin(){
         attemptUsernameLoginTest(invalidEmail, invalidPassword);
     }
 
-    @Test
+    @Test(groups = {"invalidLogin"})
     public void validEmailInvalidPasswordFailsLogin(){
         attemptEmailLoginTest(validEmail, invalidPassword);
     }
 
-    @Test
+    @Test(groups = {"invalidLogin"})
     public void emptyCredentialsFailsLogin(){
         attemptUsernameLoginTest("", "");
     }
 
-    @Test
+    @Test(groups = {"invalidLogin"})
     public void invalidHandleInvalidPasswordFailsLogin(){
         attemptUsernameLoginTest(invalidHandle, invalidPassword);
     }
 
-    @Test
+    @Test(groups = {"invalidLogin"})
     public void invalidHandleValidPasswordFailsLogin(){
         attemptUsernameLoginTest(invalidHandle, validPassword);
     }
 
-    @Test
+    @Test(groups = {"invalidLogin"})
     public void validHandleInvalidPasswordFailsLogin(){
         attemptUsernameLoginTest(validHandle, invalidPassword);
     }
@@ -75,14 +75,15 @@ public class LogInPageTest extends BaseTest {
         GlobalNavBarPage globalNavBarPage;
         globalNavBarPage = logInPage.login(identifier, validPassword);
         Assert.assertEquals(globalNavBarPage.getHomeLinkText(), "Home");
+        globalNavBarPage.logOut();
     }
 
-    @Test
+    @Test(dependsOnGroups = {"invalidLogin"}, alwaysRun = true)
     public void validHandleValidPasswordLogsIn() {
         validLoginTest(validHandle);
     }
 
-    @Test
+    @Test(dependsOnGroups = {"invalidLogin"}, alwaysRun = true)
     public void validEmailValidPasswordLogsIn() {
         validLoginTest(validEmail);
     }
