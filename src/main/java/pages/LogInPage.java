@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LogInPage extends BasePage {
     private final WebDriver driver;
     private GlobalNavBarPage globalNavBarPage;
-    private final String LOGIN_URL = getBaseUrl() + "/login";
+    private final String LOGIN_URL = getBaseUrl() + "login/";
 
     public LogInPage(WebDriver driver) {
         this.driver = driver;
