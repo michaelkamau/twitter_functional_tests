@@ -14,7 +14,7 @@ public class GlobalNavBarPage extends BasePage {
     @FindBy(how = How.CSS, using = "#global-nav-home > a > span.text")
     private WebElement homeLink;
 
-    @FindBy(how = How.CSS, using = "#global-actions > li.people.notifications > a > span.text")
+    @FindBy(how = How.ID, using = "user-dropdown-toggle")
     private WebElement notificationsLink;
 
     @FindBy(how = How.CSS, using = "#global-actions > li.dm-nav > a > span.text")
@@ -47,6 +47,9 @@ public class GlobalNavBarPage extends BasePage {
     @FindBy(how = How.CSS, using = "#user-dropdown-toggle > img")
     private WebElement profileIcon;
 
+    @FindBy(how = How.CSS, using = "#signout-button > button")
+    private WebElement logOutButton;
+
     public GlobalNavBarPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -57,5 +60,10 @@ public class GlobalNavBarPage extends BasePage {
 
     public String getNotificationsText() {
         return notificationsLink.getText();
+    }
+
+    public void logOut() {
+        notificationsLink.click();
+        logOutButton.click();
     }
 }
