@@ -1,8 +1,11 @@
 <suite name="Twitter" verbose="1" >
 
-    <test name="LandingPageTests">
+    <test name="TwiiterWebUITests">
         <classes>
             <class name="LandingPageTest"/>
+            <class name="LogInPageTest"/>
+            <class name="GlobalNavBarTest"/>
         </classes>
     </test>
+
 </suite>
