@@ -38,7 +38,7 @@ public class GlobalNavBarPage extends BasePage {
     @FindBy(how = How.CSS, using = "#doc > div.topbar.js-topbar > div.global-nav > div > div > h1")
     private WebElement twitterHomeIconLink;
 
-    @FindBy(how = How.ID, using = "#search-query")
+    @FindBy(how = How.ID, using = "search-query")
     private WebElement searchBox;
 
     @FindBy(how = How.CSS, using = "#global-nav-home > a > span.Icon.Icon--homeFilled.Icon--large.u-textUserColor")
