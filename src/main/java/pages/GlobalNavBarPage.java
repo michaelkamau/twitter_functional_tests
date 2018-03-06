@@ -38,7 +38,7 @@ public class GlobalNavBarPage extends BasePage {
     @FindBy(how = How.CSS, using = "#doc > div.topbar.js-topbar > div.global-nav > div > div > h1")
     private WebElement twitterHomeIconLink;
 
-    @FindBy(how = How.CSS, using = "#search-query")
+    @FindBy(how = How.ID, using = "#search-query")
     private WebElement searchBox;
 
     @FindBy(how = How.CSS, using = "#global-nav-home > a > span.Icon.Icon--homeFilled.Icon--large.u-textUserColor")
@@ -89,6 +89,22 @@ public class GlobalNavBarPage extends BasePage {
 
     public final String getTweetBtnText() {
         return tweetBtn.getText();
+    }
+
+    public final boolean isTweetBtnVisible() {
+        return tweetBtn.isDisplayed();
+    }
+
+    public final String getSearchBoxPlaceholder() {
+        return searchBox.getAttribute("placeholder");
+    }
+
+    public final boolean isSearchIconVisible() {
+        return searchBoxIcon.isDisplayed();
+    }
+
+    public final boolean isSearchBoxVisible() {
+        return searchBox.isDisplayed();
     }
 
     public final void logOut() {
