@@ -111,4 +111,8 @@ public class GlobalNavBarPage extends BasePage {
         notificationsLink.click();
         logOutButton.click();
     }
+
+    public final boolean isTwitterHomeIconVisible() {
+        return twitterHomeIconLink.isDisplayed();
+    }
 }

@@ -46,4 +46,9 @@ public class GlobalNavBarTest extends BaseTest {
         Assert.assertEquals(globalNavBarPage.getSearchBoxPlaceholder(), "Search Twitter");
     }
 
+    @Test
+    public void viewTwitterHomeIconLink() {
+        Assert.assertTrue(globalNavBarPage.isTwitterHomeIconVisible());
+    }
+
 }
