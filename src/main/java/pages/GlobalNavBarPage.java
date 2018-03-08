@@ -4,12 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * Models the Global Navigation Bar at the header when a user if logged in.
  */
 public class GlobalNavBarPage extends BasePage {
     private final WebDriver driver;
+    private ProfileDropdownMenuPage profileDropdownMenuPage;
 
     @FindBy(how = How.CSS, using = "#global-nav-home > a > span.text")
     private WebElement homeLinkText;
@@ -114,5 +116,11 @@ public class GlobalNavBarPage extends BasePage {
 
     public final boolean isTwitterHomeIconVisible() {
         return twitterHomeIconLink.isDisplayed();
+    }
+
+    public final ProfileDropdownMenuPage openProfileDropDownMenu() {
+        profileSettingsLink.click();
+        profileDropdownMenuPage = PageFactory.initElements(driver, ProfileDropdownMenuPage.class);
+        return profileDropdownMenuPage;
     }
 }
