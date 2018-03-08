@@ -43,4 +43,12 @@ public class ProfileDropdownMenuPage extends BasePage {
     public final String getTwitterHandle() {
         return twitterHandle.getText();
     }
+
+    public final String getProfileMenuLink() {
+        return profileMenuLink.getAttribute("href");
+    }
+
+    public final String getProfileText() {
+        return profileMenuLink.getText();
+    }
 }

@@ -1,6 +1,7 @@
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pages.BasePage;
 import pages.GlobalNavBarPage;
 import pages.LogInPage;
 import pages.ProfileDropdownMenuPage;
@@ -25,5 +26,12 @@ public class ProfileDropdownMenuTest extends BaseTest {
     @Test
     public void viewTwitterHandle() {
         Assert.assertEquals(profileDropdownMenuPage.getTwitterHandle(), "@" + validHandle);
+    }
+
+    @Test
+    public void viewProfileMenuLink() {
+        final String expectedProfileMenuLink = BasePage.getBaseUrl() + validHandle;
+        Assert.assertEquals(profileDropdownMenuPage.getProfileMenuLink(), expectedProfileMenuLink);
+        Assert.assertEquals(profileDropdownMenuPage.getProfileText(), "Profile");
     }
 }
