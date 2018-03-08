@@ -36,5 +36,11 @@ public class ProfileDropdownMenuPage extends BasePage {
         this.driver = driver;
     }
 
+    public final String getName() {
+        return name.getText();
+    }
 
+    public final String getTwitterHandle() {
+        return twitterHandle.getText();
+    }
 }

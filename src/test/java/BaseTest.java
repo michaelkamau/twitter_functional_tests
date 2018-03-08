@@ -12,6 +12,7 @@ public class BaseTest {
     final String validEmail = System.getenv("validEmail");
     final String validHandle = System.getenv("validHandle");
     final String validPassword = System.getenv("validPassword");
+    final String twitterFullName = System.getenv("twitterFullName");
     final String invalidPassword = "not_a_password";
     final String invalidEmail = "not_an_email";
     final String invalidHandle = "not_a_handle";
