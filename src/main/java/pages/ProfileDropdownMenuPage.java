@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 public class ProfileDropdownMenuPage extends BasePage {
     private final WebDriver driver;
@@ -26,7 +27,7 @@ public class ProfileDropdownMenuPage extends BasePage {
     @FindBy(how = How.CSS, using = ".DashUserDropdown > ul:nth-child(3) > li:nth-child(11) > a:nth-child(1)")
     private WebElement helpCenterMenuLink;
     @FindBy(how = How.CSS, using = ".js-keyboard-shortcut-trigger > button:nth-child(1)")
-    private WebElement keyboardShortcutsMenuLink;
+    private WebElement keyboardShortcutsButton;
     @FindBy(how = How.CSS, using = "#signout-button > button:nth-child(1)")
     private WebElement logoutBtn;
     @FindBy(how = How.CSS, using = "li.current-user:nth-child(15) > a:nth-child(1)")
@@ -98,5 +99,15 @@ public class ProfileDropdownMenuPage extends BasePage {
 
     public final String getHelpCenterText() {
         return helpCenterMenuLink.getText();
+    }
+
+    public final boolean isKeyboardShortcutsButtonVisible() {
+        return keyboardShortcutsButton.isDisplayed();
+    }
+
+    public final KeyboardShortcutsPage openKeyboardShortcuts() {
+        keyboardShortcutsButton.click();
+        KeyboardShortcutsPage keyboardShortcutsPage = PageFactory.initElements(driver, KeyboardShortcutsPage.class);
+        return keyboardShortcutsPage;
     }
 }

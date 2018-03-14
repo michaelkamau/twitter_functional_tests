@@ -1,10 +1,7 @@
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.BasePage;
-import pages.GlobalNavBarPage;
-import pages.LogInPage;
-import pages.ProfileDropdownMenuPage;
+import pages.*;
 
 public class ProfileDropdownMenuTest extends BaseTest {
     private ProfileDropdownMenuPage profileDropdownMenuPage;
@@ -76,5 +73,12 @@ public class ProfileDropdownMenuTest extends BaseTest {
         final String expectedHelpCenterMenuLink = "https://support.twitter.com/";
         Assert.assertEquals(profileDropdownMenuPage.getHelpCenterMenuLink(), expectedHelpCenterMenuLink);
         Assert.assertEquals(profileDropdownMenuPage.getHelpCenterText(), "Help Center");
+    }
+
+    @Test
+    public void accessKeyboardShortcuts() {
+        Assert.assertTrue(profileDropdownMenuPage.isKeyboardShortcutsButtonVisible());
+        KeyboardShortcutsPage keyboardShortcutsPage = profileDropdownMenuPage.openKeyboardShortcuts();
+        Assert.assertTrue(keyboardShortcutsPage.isKeyboardShortcutsDialogDisplayed());
     }
 }
