@@ -8,6 +8,7 @@ import pages.ProfileDropdownMenuPage;
 
 public class ProfileDropdownMenuTest extends BaseTest {
     private ProfileDropdownMenuPage profileDropdownMenuPage;
+    private final String PROFILE_LINK = BasePage.getBaseUrl() + validHandle;
 
     @BeforeClass
     @Override
@@ -30,15 +31,22 @@ public class ProfileDropdownMenuTest extends BaseTest {
 
     @Test
     public void viewProfileMenuLink() {
-        final String expectedProfileMenuLink = BasePage.getBaseUrl() + validHandle;
+        final String expectedProfileMenuLink = PROFILE_LINK;
         Assert.assertEquals(profileDropdownMenuPage.getProfileMenuLink(), expectedProfileMenuLink);
         Assert.assertEquals(profileDropdownMenuPage.getProfileText(), "Profile");
     }
 
     @Test
     public void viewListsMenuLink() {
-        final String expectedListsMenuLink = BasePage.getBaseUrl() + validHandle + "/lists";
+        final String expectedListsMenuLink = PROFILE_LINK + "/lists";
         Assert.assertEquals(profileDropdownMenuPage.getListsMenuLink(), expectedListsMenuLink);
         Assert.assertEquals(profileDropdownMenuPage.getListsText(), "Lists");
+    }
+
+    @Test
+    public void viewMomentsMenuLink() {
+        final String expectedMomentsMenuLink = PROFILE_LINK + "/moments";
+        Assert.assertEquals(profileDropdownMenuPage.getMomentsMenuLink(), expectedMomentsMenuLink);
+        Assert.assertEquals(profileDropdownMenuPage.getMomentsText(), "Moments");
     }
 }
