@@ -44,4 +44,11 @@ public class TweetBoxTest extends BaseTest {
         final String expectedAttachMediaTooltip = tweetBoxPage.getAttachMediaTooltip();
         Assert.assertEquals(tweetBoxPage.getAttachMediaTooltip(), expectedAttachMediaTooltip);
     }
+
+    @Test
+    public void viewAttachGIFButton() {
+        Assert.assertTrue(tweetBoxPage.isAttachGIFBtnDisplayed());
+        final String expectedAttachGIFTooltip = "Add a GIF";
+        Assert.assertEquals(tweetBoxPage.getAttachGIFTooltip(), expectedAttachGIFTooltip);
+    }
 }
