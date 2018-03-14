@@ -114,4 +114,10 @@ public class ProfileDropdownMenuPage extends BasePage {
     public final String getNightModeText() {
         return nightModeToggle.getText();
     }
+
+    public final LandingPage logOut() {
+        logoutBtn.click();
+        LandingPage landingPage = PageFactory.initElements(driver, LandingPage.class);
+        return landingPage;
+    }
 }

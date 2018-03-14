@@ -86,4 +86,11 @@ public class ProfileDropdownMenuTest extends BaseTest {
     public void viewNightModeToggle() {
         Assert.assertEquals(profileDropdownMenuPage.getNightModeText(), "Night mode");
     }
+
+    @Test
+    public void logOut() {
+        LandingPage landingPage = profileDropdownMenuPage.logOut();
+        String expectedLogoutUrl = BasePage.getBaseUrl() + "?logged_out=1&lang=en";
+        Assert.assertEquals(landingPage.getLoggedOutUrl(), expectedLogoutUrl);
+    }
 }
