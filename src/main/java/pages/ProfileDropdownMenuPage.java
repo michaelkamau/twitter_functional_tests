@@ -83,4 +83,12 @@ public class ProfileDropdownMenuPage extends BasePage {
     public final String getAnalyticsText() {
         return analyticsMenuLink.getText();
     }
+
+    public final String getSettingsPrivacyLink() {
+        return settingsPrivacyMenuLink.getAttribute("href");
+    }
+
+    public final String getSettingsPrivacyText() {
+        return settingsPrivacyMenuLink.getText();
+    }
 }

@@ -63,4 +63,11 @@ public class ProfileDropdownMenuTest extends BaseTest {
         Assert.assertEquals(profileDropdownMenuPage.getAnalyticsMenuLink(), expectedAnalyticsLink);
         Assert.assertEquals(profileDropdownMenuPage.getAnalyticsText(), "Analytics");
     }
+
+    @Test
+    public void viewSettingsPrivacyMenuLink() {
+        final String expectedSettingsLink = BasePage.getBaseUrl() + "settings";
+        Assert.assertEquals(profileDropdownMenuPage.getSettingsPrivacyLink(), expectedSettingsLink);
+        Assert.assertEquals(profileDropdownMenuPage.getSettingsPrivacyText(), "Settings and privacy");
+    }
 }
