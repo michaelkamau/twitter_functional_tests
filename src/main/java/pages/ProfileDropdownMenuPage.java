@@ -51,4 +51,12 @@ public class ProfileDropdownMenuPage extends BasePage {
     public final String getProfileText() {
         return profileMenuLink.getText();
     }
+
+    public final String getListsMenuLink() {
+        return listsMenuLink.getAttribute("href");
+    }
+
+    public final String getListsText() {
+        return listsMenuLink.getText();
+    }
 }

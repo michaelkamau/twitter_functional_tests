@@ -34,4 +34,11 @@ public class ProfileDropdownMenuTest extends BaseTest {
         Assert.assertEquals(profileDropdownMenuPage.getProfileMenuLink(), expectedProfileMenuLink);
         Assert.assertEquals(profileDropdownMenuPage.getProfileText(), "Profile");
     }
+
+    @Test
+    public void viewListsMenuLink() {
+        final String expectedListsMenuLink = BasePage.getBaseUrl() + validHandle + "/lists";
+        Assert.assertEquals(profileDropdownMenuPage.getListsMenuLink(), expectedListsMenuLink);
+        Assert.assertEquals(profileDropdownMenuPage.getListsText(), "Lists");
+    }
 }
