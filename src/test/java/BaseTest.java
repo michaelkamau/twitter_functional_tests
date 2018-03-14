@@ -1,9 +1,8 @@
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-import java.net.URL;
 import java.util.logging.Logger;
 
 public class BaseTest {
@@ -17,16 +16,13 @@ public class BaseTest {
     final String invalidPassword = "not_a_password";
     final String invalidEmail = "not_an_email";
     final String invalidHandle = "not_a_handle";
-    final String remoteUrl = "http://localhost:4444/wd/hub/";
 
     RemoteWebDriver driver;
 
     @BeforeClass
     public void setUp() throws Exception {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName("chrome");
-        driver = new RemoteWebDriver(new URL(remoteUrl),
-                capabilities);
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+        driver = new ChromeDriver();
         driver.manage().window().fullscreen();
     }
 
