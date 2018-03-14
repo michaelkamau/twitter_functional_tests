@@ -49,4 +49,11 @@ public class ProfileDropdownMenuTest extends BaseTest {
         Assert.assertEquals(profileDropdownMenuPage.getMomentsMenuLink(), expectedMomentsMenuLink);
         Assert.assertEquals(profileDropdownMenuPage.getMomentsText(), "Moments");
     }
+
+    @Test
+    public void viewTwitterAdsMenuLink() {
+        final String expectedTwitterAdsLink = "https://ads.twitter.com/?ref=gl-tw-tw-twitter-ads";
+        Assert.assertEquals(profileDropdownMenuPage.getTwitterAdsLink(), expectedTwitterAdsLink);
+        Assert.assertEquals(profileDropdownMenuPage.getTwitterAdsText(), "Twitter Ads");
+    }
 }
