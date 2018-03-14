@@ -19,7 +19,7 @@ public class TweetBoxPage extends BasePage {
     @FindBy(how = How.CSS, using = "form.tweet-form:nth-child(2) > div:nth-child(3) > div:nth-child(2) > span:nth-child(1) > button:nth-child(1)")
     private WebElement addExtraTweetBtn;
 
-    @FindBy(how = How.NAME, using = "media_empty")
+    @FindBy(how = How.CSS, using = "form.tweet-form:nth-child(2) > div:nth-child(3) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > div:nth-child(2) > label:nth-child(3) > input:nth-child(2)")
     private WebElement attachMediaBtn;
 
     @FindBy(how = How.CSS, using = "form.tweet-form:nth-child(2) > div:nth-child(3) > div:nth-child(1) > span:nth-child(2) > div:nth-child(1) > button:nth-child(1)")
