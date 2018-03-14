@@ -5,6 +5,7 @@
             <class name="LandingPageTest"/>
             <class name="LogInPageTest"/>
             <class name="GlobalNavBarTest"/>
+            <class name="ProfileDropdownMenuTest"/>
         </classes>
     </test>
 
