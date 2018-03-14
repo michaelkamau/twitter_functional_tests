@@ -91,4 +91,12 @@ public class ProfileDropdownMenuPage extends BasePage {
     public final String getSettingsPrivacyText() {
         return settingsPrivacyMenuLink.getText();
     }
+
+    public final String getHelpCenterMenuLink() {
+        return helpCenterMenuLink.getAttribute("href");
+    }
+
+    public final String getHelpCenterText() {
+        return helpCenterMenuLink.getText();
+    }
 }

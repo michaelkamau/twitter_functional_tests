@@ -70,4 +70,11 @@ public class ProfileDropdownMenuTest extends BaseTest {
         Assert.assertEquals(profileDropdownMenuPage.getSettingsPrivacyLink(), expectedSettingsLink);
         Assert.assertEquals(profileDropdownMenuPage.getSettingsPrivacyText(), "Settings and privacy");
     }
+
+    @Test
+    public void viewHelpCenterMenuLink() {
+        final String expectedHelpCenterMenuLink = "https://support.twitter.com/";
+        Assert.assertEquals(profileDropdownMenuPage.getHelpCenterMenuLink(), expectedHelpCenterMenuLink);
+        Assert.assertEquals(profileDropdownMenuPage.getHelpCenterText(), "Help Center");
+    }
 }
