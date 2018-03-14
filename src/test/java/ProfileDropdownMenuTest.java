@@ -81,4 +81,9 @@ public class ProfileDropdownMenuTest extends BaseTest {
         KeyboardShortcutsPage keyboardShortcutsPage = profileDropdownMenuPage.openKeyboardShortcuts();
         Assert.assertTrue(keyboardShortcutsPage.isKeyboardShortcutsDialogDisplayed());
     }
+
+    @Test
+    public void viewNightModeToggle() {
+        Assert.assertEquals(profileDropdownMenuPage.getNightModeText(), "Night mode");
+    }
 }

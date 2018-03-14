@@ -31,7 +31,7 @@ public class ProfileDropdownMenuPage extends BasePage {
     @FindBy(how = How.CSS, using = "#signout-button > button:nth-child(1)")
     private WebElement logoutBtn;
     @FindBy(how = How.CSS, using = "li.current-user:nth-child(15) > a:nth-child(1)")
-    private WebElement nightModeMenuLink;
+    private WebElement nightModeToggle;
 
     public ProfileDropdownMenuPage(WebDriver driver) {
         this.driver = driver;
@@ -109,5 +109,9 @@ public class ProfileDropdownMenuPage extends BasePage {
         keyboardShortcutsButton.click();
         KeyboardShortcutsPage keyboardShortcutsPage = PageFactory.initElements(driver, KeyboardShortcutsPage.class);
         return keyboardShortcutsPage;
+    }
+
+    public final String getNightModeText() {
+        return nightModeToggle.getText();
     }
 }
