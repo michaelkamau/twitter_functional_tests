@@ -41,7 +41,7 @@ public class TweetBoxTest extends BaseTest {
     public void viewAttachMediaButton() {
         Assert.assertTrue(tweetBoxPage.isAttachMediaBtnVisible());
         // This is failing for some unknown reason
-        final String expectedAttachMediaTooltip = tweetBoxPage.getAttachMediaTooltip();
+        final String expectedAttachMediaTooltip = "Add photos or video";
         Assert.assertEquals(tweetBoxPage.getAttachMediaTooltip(), expectedAttachMediaTooltip);
     }
 
