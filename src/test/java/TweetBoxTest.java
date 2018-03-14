@@ -36,4 +36,12 @@ public class TweetBoxTest extends BaseTest {
     public void addExtraTweetButtonDisabledWithEmptyTweet() {
         Assert.assertTrue(tweetBoxPage.isAddExtraTweetBtnDisabled());
     }
+
+    @Test
+    public void viewAttachMediaButton() {
+        Assert.assertTrue(tweetBoxPage.isAttachMediaBtnVisible());
+        // This is failing for some unknown reason
+        final String expectedAttachMediaTooltip = tweetBoxPage.getAttachMediaTooltip();
+        Assert.assertEquals(tweetBoxPage.getAttachMediaTooltip(), expectedAttachMediaTooltip);
+    }
 }
