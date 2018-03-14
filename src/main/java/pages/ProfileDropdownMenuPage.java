@@ -75,4 +75,12 @@ public class ProfileDropdownMenuPage extends BasePage {
     public final String getTwitterAdsText() {
         return twitterAdsMenuLink.getText();
     }
+
+    public final String getAnalyticsMenuLink() {
+        return analyticsMenuLink.getAttribute("href");
+    }
+
+    public final String getAnalyticsText() {
+        return analyticsMenuLink.getText();
+    }
 }

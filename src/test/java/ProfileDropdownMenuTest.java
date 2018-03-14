@@ -56,4 +56,11 @@ public class ProfileDropdownMenuTest extends BaseTest {
         Assert.assertEquals(profileDropdownMenuPage.getTwitterAdsLink(), expectedTwitterAdsLink);
         Assert.assertEquals(profileDropdownMenuPage.getTwitterAdsText(), "Twitter Ads");
     }
+
+    @Test
+    public void viewAnalyticsMenuLink() {
+        final String expectedAnalyticsLink = "https://analytics.twitter.com/";
+        Assert.assertEquals(profileDropdownMenuPage.getAnalyticsMenuLink(), expectedAnalyticsLink);
+        Assert.assertEquals(profileDropdownMenuPage.getAnalyticsText(), "Analytics");
+    }
 }
